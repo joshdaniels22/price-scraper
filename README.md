@@ -1,1 +1,1 @@
-# price-scaper
+# price-scraper
