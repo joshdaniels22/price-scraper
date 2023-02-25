@@ -8,15 +8,16 @@ test('not a real rest', async ({ page }) => {
   await page.goto(url);
   const html = await page.content()
   const $ = cheerio.load(html)
-  
+
   var currentDate = moment().format('DD-MM-YYYY H:mm');
 
   $('.buybox-module_price_2YUFa', html).each(function () {
     const price = $(this).text()
-    const rowEntry = price + " " + currentDate + '\n'
+    const strippedPrice = price.replace('R ','').replace(',','')
+    const rowEntry = strippedPrice + " " + currentDate + '\n'
 
 
-    fs.appendFile('prices.txt', rowEntry, (err) => {
+    fs.appendFile('../model/prices.txt', rowEntry, (err) => {
       if (err) throw err;
     })    
   })
