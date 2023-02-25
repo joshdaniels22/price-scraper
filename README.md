@@ -1,9 +1,11 @@
-# price-scaper
+# price-scraper
 
-To run application and scrape data:
+To scrape data run at one point in time run:
 
 `npx playwright test`
 
-Cron Job in crontab file:
+This will scrape the data from the webpage and write it to a file called `prices.txt` in the root directory of the project.
 
-`0 * * * * /bin/sh /home/josh/playwrightScript.sh`
+It will be run on its own with a crobjob as specific in the crontab file. The specific cronjob below will have it run every hour on the hour. The directory that the script located must be specified correctly.
+
+`0 * * * * /bin/sh /projectPath/priceScraperScript.sh`
