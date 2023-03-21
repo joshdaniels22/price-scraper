@@ -5,17 +5,19 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
   Legend
@@ -29,7 +31,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Price of Lego',
+      text: 'Price of LEGO® Technic App-Controlled Top Gear Rally Car',
     },
   },
 };
@@ -40,16 +42,17 @@ export const data = {
   labels,
   datasets: [
     {
-      label: 'Lego Car',
+      label: 'LEGO® Top Gear Rally Car',
       data: [2299,2599,2199,2299],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: 'rrgb(2,40,73,1)',
+      borderColor: 'rgb(32,120,209,1)',
     }
   ],
 };
 function App() {
   return <div>
-    <h1>Price Scraper</h1>
-    <Bar options={options} data={data}/></div>
+    <header> <h1>Price Scraper</h1> </header>
+    <Line options={options} data={data}/></div>
 }
 
 export default App;
