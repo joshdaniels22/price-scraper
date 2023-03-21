@@ -28,7 +28,7 @@ test('not a real rest', async ({ page }) => {
       })    
     })
 
-    await sleep(60 * 1000);
+    await sleep(12 * 60 * 60 * 1000); // hr min sec millisec 
   }
 });
 
